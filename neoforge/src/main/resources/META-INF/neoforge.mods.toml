@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[4,)"
 issueTrackerURL = "https://github.com/mahmudindev/mcmod-modifiedbiomesourceterrablender/issues"
 license = "ARR"
 
@@ -14,29 +14,29 @@ Add compatibility between Modified Biome Source and TerraBlender.
 logoFile = "assets/modifiedbiomesourceterrablender/icon.png"
 
 [[dependencies.modifiedbiomesourceterrablender]]
-modId = "forge"
-mandatory = true
-versionRange = "[47,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.20.1,)"
+type = "required"
+versionRange = "[1.21,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "modifiedbiomesource"
-mandatory = true
+type = "required"
 versionRange = "[0.0.2,)"
 ordering = "NONE"
 side = "SERVER"
 
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "terrablender"
-mandatory = true
-versionRange = "[3.0.1,)"
+type = "required"
+versionRange = "[4.0.0,)"
 ordering = "NONE"
 side = "SERVER"

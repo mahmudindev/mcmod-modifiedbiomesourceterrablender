@@ -8,8 +8,6 @@ dependencies {
     // Do NOT use other classes from Fabric Loader.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
-    annotationProcessor("io.github.llamalad7:mixinextras-common:$rootProject.mixinextras_version")
-    compileOnly("io.github.llamalad7:mixinextras-common:$rootProject.mixinextras_version")
     annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:$rootProject.mixinsquared_version")
     compileOnly("com.github.bawnorton.mixinsquared:mixinsquared-common:$rootProject.mixinsquared_version")
     modCompileOnly("com.github.glitchfiend:TerraBlender-common:${terrablender_version}")
