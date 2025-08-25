@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "modifiedbiomesourceterrablender",
+  "version": "${version}",
+  "name": "Modified Biome Source - TerraBlender",
+  "description": "Add compatibility between Modified Biome Source and TerraBlender.",
+  "authors": [
+    "mahmudindev"
+  ],
+  "contact": {
+    "homepage": "https://github.com/mahmudindev",
+    "sources": "https://github.com/mahmudindev/mcmod-modifiedbiomesourceterrablender"
+  },
+  "license": "ARR",
+  "icon": "assets/modifiedbiomesourceterrablender/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.mahmudindev.mcmod.modifiedbiomesourceterrablender.fabric.ModifiedBiomeSourceTerraBlenderFabric"
+    ],
+    "client": [
+      "com.github.mahmudindev.mcmod.modifiedbiomesourceterrablender.fabric.client.ModifiedBiomeSourceTerraBlenderFabricClient"
+    ]
+  },
+  "mixins": [
+    "modifiedbiomesourceterrablender.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "modifiedbiomesource": ">=0.0.2",
+    "terrablender": ">=3.0.1"
+  },
+  "suggests": {
+    "fabric-api": "*"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.github.mahmudindev.mcmod.modifiedbiomesourceterrablender.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "ClimateParameterListHMixin",
+    "LevelUtilsMixin",
+    "ModifiedMultiNoiseBiomeSourceMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
