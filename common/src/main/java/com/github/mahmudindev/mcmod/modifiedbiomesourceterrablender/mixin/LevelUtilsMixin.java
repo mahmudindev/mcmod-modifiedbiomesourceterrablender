@@ -23,6 +23,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import terrablender.api.RegionType;
 import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 import terrablender.util.LevelUtils;
 import terrablender.worldgen.IExtendedBiomeSource;
 import terrablender.worldgen.IExtendedNoiseGeneratorSettings;
@@ -30,7 +31,7 @@ import terrablender.worldgen.IExtendedParameterList;
 
 @Mixin(LevelUtils.class)
 public abstract class LevelUtilsMixin {
-    @Inject(method = "initializeBiomes", at = @At(value = "RETURN", ordinal = 0))
+    @Inject(method = "initializeBiomes", at = @At(value = "RETURN", ordinal = 2))
     private static void initializeBiomesSupport(
             RegistryAccess registryAccess,
             Holder<DimensionType> dimensionType,
@@ -56,7 +57,15 @@ public abstract class LevelUtilsMixin {
         }
 
         NoiseGeneratorSettings genSettings = chunkGeneratorX.generatorSettings().value();
-        ((IExtendedNoiseGeneratorSettings) (Object) genSettings).setRegionType(regionType);
+        SurfaceRuleManager.RuleCategory surfaceRule = switch(regionType) {
+            case OVERWORLD -> SurfaceRuleManager.RuleCategory.OVERWORLD;
+            case NETHER -> SurfaceRuleManager.RuleCategory.NETHER;
+            default -> throw new IllegalArgumentException(String.format(
+                    "Attempted to get surface rule category for unsupported region type %s",
+                    regionType
+            ));
+        };
+        ((IExtendedNoiseGeneratorSettings) (Object) genSettings).setRuleCategory(surfaceRule);
 
         ModifiedMultiNoiseBiomeSource biomeSrc = (ModifiedMultiNoiseBiomeSource) biomeSource;
         Climate.ParameterList<Holder<Biome>> biomeParams = biomeSrc.getParameters();

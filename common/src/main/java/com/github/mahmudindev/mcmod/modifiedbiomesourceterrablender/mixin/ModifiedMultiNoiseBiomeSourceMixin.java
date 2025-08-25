@@ -12,11 +12,7 @@ import terrablender.worldgen.IExtendedParameterList;
 
 @Mixin(ModifiedMultiNoiseBiomeSource.class)
 public abstract class ModifiedMultiNoiseBiomeSourceMixin {
-    @Inject(
-            method = "method_38109(IIILnet/minecraft/world/level/biome/Climate$Sampler;)Lnet/minecraft/core/Holder;",
-            at = @At("HEAD"),
-            cancellable = true
-    )
+    @Inject(method = "getNoiseBiome", at = @At("HEAD"), cancellable = true)
     private void getNoiseBiomeSupport(
             int x,
             int y,
