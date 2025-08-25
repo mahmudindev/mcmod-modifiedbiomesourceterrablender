@@ -10,7 +10,7 @@ dependencies {
 
     annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:$rootProject.mixinsquared_version")
     compileOnly("com.github.bawnorton.mixinsquared:mixinsquared-common:$rootProject.mixinsquared_version")
-    modCompileOnly("com.github.glitchfiend:TerraBlender-common:${terrablender_version}")
+    modCompileOnly("com.github.glitchfiend:TerraBlender-common:${rootProject.terrablender_version}")
 
     modImplementation ":modifiedbiomesource-common:${rootProject.modifiedbiomesource_version}"
 }

@@ -76,20 +76,22 @@ public abstract class LevelUtilsMixin {
                 seed
         );
 
-        Registry<Biome> biomeRegistry = registryAccess.registryOrThrow(Registries.BIOME);
+        Registry<Biome> biomeRegistry = registryAccess.lookupOrThrow(Registries.BIOME);
         ImmutableList.Builder<Holder<Biome>> biomeBuilder = ImmutableList.builder();
         if (biomeSrc.isModSupported()) {
             Regions.get(regionType).forEach(region -> {
                 region.addBiomes(biomeRegistry, pair -> {
                     ResourceKey<Biome> biome = pair.getSecond();
 
-                    biomeRegistry.getHolder(biome).ifPresent(biomeX -> {
+                    if (biomeRegistry.containsKey(biome)) {
+                        Holder<Biome> biomeX = biomeRegistry.getOrThrow(biome);
+
                         if (!biomeSrc.canGenerate(biomeX)) {
                             return;
                         }
 
-                        biomeBuilder.add(biomeRegistry.getHolderOrThrow(biome));
-                    });
+                        biomeBuilder.add(biomeX);
+                    }
                 });
             });
         }

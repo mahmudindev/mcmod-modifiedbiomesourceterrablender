@@ -54,7 +54,7 @@ public abstract class ClimateParameterListHMixin<T> implements IClimateParameter
                 return;
             }
 
-            if (biomeSourceX.canGenerate(registry.getHolderOrThrow(pair.getSecond()))) {
+            if (biomeSourceX.canGenerate(registry.getOrThrow(pair.getSecond()))) {
                 mapper.accept(pair);
                 i.getAndIncrement();
             }

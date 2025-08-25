@@ -27,10 +27,10 @@
   ],
   "depends": {
     "fabricloader": ">=0.16.14",
-    "minecraft": "~1.21",
+    "minecraft": "~1.21.2",
     "java": ">=21",
     "modifiedbiomesource": ">=0.0.2",
-    "terrablender": ">=4.0.0"
+    "terrablender": ">=4.2.0"
   },
   "suggests": {
     "fabric-api": "*"
