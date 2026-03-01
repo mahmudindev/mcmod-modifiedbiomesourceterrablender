@@ -99,7 +99,7 @@ public abstract class LevelUtilsMixin {
 
         ModifiedBiomeSourceTerraBlender.LOGGER.info(
                 "Initialized TerraBlender biomes for level stem {}",
-                levelResourceKey.location()
+                levelResourceKey.identifier()
         );
     }
 }

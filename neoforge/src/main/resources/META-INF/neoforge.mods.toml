@@ -16,28 +16,28 @@ logoFile = "assets/modifiedbiomesourceterrablender/icon.png"
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.2,)"
+versionRange = "[21.11,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.2,)"
+versionRange = "[1.21.11,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "modifiedbiomesource"
 type = "required"
-versionRange = "[0.0.2,)"
+versionRange = "[0.0.3,)"
 ordering = "NONE"
 side = "SERVER"
 
 [[dependencies.modifiedbiomesourceterrablender]]
 modId = "terrablender"
 type = "required"
-versionRange = "[4.2.0,)"
+versionRange = "[21.11.0,)"
 ordering = "NONE"
 side = "SERVER"
 
