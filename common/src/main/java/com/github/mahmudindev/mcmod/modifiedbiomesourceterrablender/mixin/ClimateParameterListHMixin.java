@@ -32,7 +32,7 @@ public abstract class ClimateParameterListHMixin<T> implements IClimateParameter
             method = "@MixinSquared:Handler",
             at = @At(
                     value = "INVOKE",
-                    target = "Lterrablender/api/Region;addBiomes(Lnet/minecraft/class_2378;Ljava/util/function/Consumer;)V"
+                    target = "Lterrablender/api/Region;addBiomes(Lnet/minecraft/core/Registry;Ljava/util/function/Consumer;)V"
             )
     )
     private void initializeForTerraBlenderSupport(

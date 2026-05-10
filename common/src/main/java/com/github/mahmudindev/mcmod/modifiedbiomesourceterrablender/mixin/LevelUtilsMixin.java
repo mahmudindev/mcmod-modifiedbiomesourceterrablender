@@ -31,7 +31,7 @@ import terrablender.worldgen.IExtendedParameterList;
 
 @Mixin(LevelUtils.class)
 public abstract class LevelUtilsMixin {
-    @Inject(method = "initializeBiomes", at = @At(value = "RETURN", ordinal = 2))
+    @Inject(method = "initializeBiomes", at = @At(value = "RETURN", ordinal = 3))
     private static void initializeBiomesSupport(
             RegistryAccess registryAccess,
             Holder<DimensionType> dimensionType,

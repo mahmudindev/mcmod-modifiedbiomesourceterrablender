@@ -1,45 +1,45 @@
 modLoader = "javafml"
-loaderVersion = "[4,)"
+loaderVersion = "${neoforge_loader_version_range}"
 issueTrackerURL = "https://github.com/mahmudindev/mcmod-modifiedbiomesourceterrablender/issues"
-license = "ARR"
+license = "${mod_license}"
 
 [[mods]]
-modId = "modifiedbiomesourceterrablender"
+modId = "${mod_id}"
 version = "${version}"
-displayName = "Modified Biome Source - TerraBlender"
-authors = "mahmudindev"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
 description = '''
-Add compatibility between Modified Biome Source and TerraBlender.
+${description}
 '''
-logoFile = "assets/modifiedbiomesourceterrablender/icon.png"
+logoFile = "assets/${mod_id}/icon.png"
 
-[[dependencies.modifiedbiomesourceterrablender]]
+[[dependencies.${mod_id}]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.11,)"
+versionRange = "${neoforge_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.modifiedbiomesourceterrablender]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.11,)"
+versionRange = "[${minecraft_version},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.modifiedbiomesourceterrablender]]
+[[dependencies.${mod_id}]]
 modId = "modifiedbiomesource"
 type = "required"
-versionRange = "[0.0.3,)"
+versionRange = "[${modifiedbiomesource_version},)"
 ordering = "NONE"
 side = "SERVER"
 
-[[dependencies.modifiedbiomesourceterrablender]]
+[[dependencies.${mod_id}]]
 modId = "terrablender"
 type = "required"
-versionRange = "[21.11.0,)"
+versionRange = "[${terrablender_version},)"
 ordering = "NONE"
 side = "SERVER"
 
 [[mixins]]
-config = "modifiedbiomesourceterrablender.mixins.json"
+config = "${mod_id}.mixins.json"
