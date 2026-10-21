@@ -21,9 +21,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import terrablender.api.MaterialRuleManager;
 import terrablender.api.RegionType;
 import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 import terrablender.util.LevelUtils;
 import terrablender.worldgen.IExtendedBiomeSource;
 import terrablender.worldgen.IExtendedNoiseGeneratorSettings;
@@ -57,9 +57,9 @@ public abstract class LevelUtilsMixin {
         }
 
         NoiseGeneratorSettings genSettings = chunkGeneratorX.generatorSettings().value();
-        SurfaceRuleManager.RuleCategory surfaceRule = switch(regionType) {
-            case OVERWORLD -> SurfaceRuleManager.RuleCategory.OVERWORLD;
-            case NETHER -> SurfaceRuleManager.RuleCategory.NETHER;
+        MaterialRuleManager.RuleCategory surfaceRule = switch(regionType) {
+            case OVERWORLD -> MaterialRuleManager.RuleCategory.OVERWORLD;
+            case NETHER -> MaterialRuleManager.RuleCategory.NETHER;
             default -> throw new IllegalArgumentException(String.format(
                     "Attempted to get surface rule category for unsupported region type %s",
                     regionType
